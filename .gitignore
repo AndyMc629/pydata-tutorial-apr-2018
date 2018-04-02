@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+# DATA
+census_20180402_170044
+census_data
 
 # C extensions
 *.so
