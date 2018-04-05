@@ -14,12 +14,12 @@
 # change 'modelserve' to 'default', since the first service must be
 # named 'default'.
 service: default
-runtime: python-compat
+runtime: python
 env: flex
-entrypoint: gunicorn -b :$PORT main:app --worker-class eventlet -b :$PORT main:app --graceful-timeout 300 --timeout 300
+entrypoint: gunicorn -b :$PORT main:app --graceful-timeout 300 --timeout 300
 
 runtime_config:
-  python_version: 3
+  python_version: 2
 
 manual_scaling:
   instances: 1

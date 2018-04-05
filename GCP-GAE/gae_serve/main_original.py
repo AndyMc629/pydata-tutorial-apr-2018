@@ -24,11 +24,11 @@ from google.cloud import storage
 
 MODEL_BUCKET = 'pydata_april_2018' #os.environ['MODEL_BUCKET']
 MODEL_FILENAME = 'lr.pkl' #os.environ['MODEL_FILENAME']
-MODEL = pickle.load(open('lr.pkl', 'rb'))#None
+MODEL = None
 
 app = Flask(__name__)
 
-"""
+
 @app.before_first_request
 def _load_model():
     global MODEL
@@ -40,7 +40,7 @@ def _load_model():
     # Note: Change the save/load mechanism according to the framework
     # used to build the model.
     MODEL = pickle.loads(s)
-"""
+
 
 @app.route('/', methods=['GET'])
 def index():
